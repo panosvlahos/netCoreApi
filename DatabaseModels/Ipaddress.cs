@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace netCoreApi.Models
+namespace netCoreApi.DatabaseModels
 {
     public partial class Ipaddress
     {

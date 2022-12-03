@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using netCoreApi.Models;
+using netCoreApi.DatabaseModels;
 using netCoreApi.Database;
 using Quartz;
 using netCoreApi.Service;

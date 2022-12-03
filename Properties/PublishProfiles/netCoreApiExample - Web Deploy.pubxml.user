@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgcC0Tsj6UUqJsgKJf2p7GAAAAAACAAAAAAAQZgAAAAEAACAAAACYwQjMUy5HNbylmEIiGFAEA2UOOdQUSofXTo2oyijd0wAAAAAOgAAAAAIAACAAAABVarzUz315g8YDf993m6M74azc0RFyzaFYBPnn5zle3YAAAACtJpecMqApgRmLXMu4vnZO1mB0mmamw+0zM8ITKfmhNr0EFYSfFEue2lX9EllJIolwBAuwgm+rU9/rLNoAcHdV2zmHue14Q9Ix1vQ0b9nGgP6w9AckFIYHEgigp9xU0kaw4wt8zXEeKHHCwBEMAkjnVhKHW/JD/ZIrGTuqqhrie0AAAACoR2Jxqz+z0MardHFr2ymaaOtoY/82aFgnEq4GpWSh8PBCogkd6sO2o14ZEBbXX5+VF/1qF/zl/j8RAcInuCTT</EncryptedPassword>
+    <History>False|2022-12-02T23:58:37.6198862Z;True|2022-11-30T23:24:58.9896967+02:00;True|2022-11-30T23:22:03.0643465+02:00;True|2022-11-30T18:40:59.5363199+02:00;True|2022-11-30T18:38:44.1798128+02:00;True|2022-11-30T18:37:12.2307575+02:00;True|2022-11-30T18:36:03.1060556+02:00;True|2022-11-30T18:19:25.6136557+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=northp.database.windows.net;Initial Catalog=north;User ID=panos;Password=skino8eths!" />
+    <AzureDBConnectionStrings Include="db" />
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Novibet">
+      <Value>Data Source=northp.database.windows.net%3bInitial Catalog=north%3bUser ID=panos%3bPassword=skino8eths!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="netCoreApi.Models.masterContext">
+      <Value>Data Source=northp.database.windows.net%3bInitial Catalog=north%3bUser ID=panos%3bPassword=skino8eths!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

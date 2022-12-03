@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using netCoreApi.ApiModels;
-using netCoreApi.Models;
+using netCoreApi.DatabaseModels;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Linq;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 
@@ -46,6 +49,69 @@ namespace netCoreApi.Database
 //order by max_LogDate desc
                 
             return await _context.Ipaddresses.OrderByDescending(x=> x.UpdatedAt).ToListAsync();
+        }
+
+        public async Task<bool> CreateUser(User user)
+        {
+            bool success =false;
+
+            try
+            {
+                var exist = _context.Users.Where(x => x.Email == user.Email).FirstOrDefault();
+                if (exist == null)
+                {
+                    var success1 = _context.Users.Add(user);
+                    _context.SaveChanges();
+                    success = true;
+                }
+                else
+                    success = false;
+            }
+            catch(Exception ex)
+            {
+                success = false;
+            }
+            
+
+            return success;
+        }
+        public  User FindUserRegister(User user)
+        {
+            bool success = false;
+            User userAccount = new User();
+            try
+            {
+                userAccount = _context.Users.Where(x => x.Token == user.Token).FirstOrDefault();
+                //_context.SaveChanges();
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                success = false;
+            }
+
+
+            return userAccount;
+        }
+        public bool ChangeStatus(string token)
+        {
+            bool success = false;
+
+            try
+            {
+                var user = _context.Users.Where(x => x.Token == token).FirstOrDefault();
+                user.Status = true;
+                _context.Users.Update(user);
+                _context.SaveChanges();
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                success = false;
+            }
+
+
+            return success;
         }
     }
 }
